@@ -32,3 +32,7 @@ Getting started: (https://github.com/facebook/create-react-app/blob/master/READM
     npm start (kicks off the dev server and previews in browser)
     get coding! - this gives a boilerplate
 
+Caveats:
+    cannot use class attribute in JSX, instead use className="" (unless you're using react V16+...)
+    component files should be in CapitalCase (PascalCase?)
+    component classes have a mandatory render method that returns jsx.

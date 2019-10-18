@@ -4,9 +4,22 @@
   "private": true,
   "dependencies": {
     "@insitesoft/mobius": "^1.0.0-beta.1",
+    "@types/react-transition-group": "^4.2.3",
+    "color": "^3.1.2",
+    "core-js": "^3.3.2",
+    "date-fns": "^2.5.1",
+    "exenv": "^1.2.2",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
     "react": "^16.10.2",
+    "react-day-picker": "^7.3.2",
     "react-dom": "^16.10.2",
-    "react-scripts": "3.2.0"
+    "react-inlinesvg": "^1.1.7",
+    "react-scripts": "3.2.0",
+    "react-transition-group": "^4.3.0",
+    "styled-components": "^4.4.0",
+    "styled-components-modifiers": "^1.2.5",
+    "tiny-warning": "^1.0.3"
   },
   "scripts": {
     "start": "react-scripts start",
