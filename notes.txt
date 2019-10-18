@@ -1,3 +1,34 @@
 Sources:
     https://www.youtube.com/watch?v=DLX62G4lc44 - 5hr long full course
     https://www.youtube.com/watch?v=sBws8MSXN7A - traversy - 1:38 (Alain from Absolunet Recommended)
+
+General:
+    What React?
+        JS library that acts like a framework
+        Devved by FaceBook
+    Why React?
+        front-end JS easier to use (the JS renders the view by returning html)
+        Interactive UIs
+        Extremely Modular
+            easy to work on in teams (minimal toe stepping)
+            easy to update piecewise
+        virtual DOM
+    Prerequisites:
+        JavaScript
+        Classes, Destructureing, Higher order array methods (forEach, Map, filter)
+        arrow functions
+        fetch API & promises
+
+State:
+    an object that determines how a component renders and behaves
+    application level state via Reux or React's context API
+    can have conditional styling based on state - change component's state, change the component, e.g. if(post.state.isFeatured){css: background color: red} or something like that
+
+Getting started: (https://github.com/facebook/create-react-app/blob/master/README.md)
+    npm install create-react-app -g
+    (from the directory where you want to store your react app):
+    create-react-app 'appName'
+    ... (takes a few min)
+    npm start (kicks off the dev server and previews in browser)
+    get coding! - this gives a boilerplate
+
