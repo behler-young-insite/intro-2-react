@@ -36,3 +36,4 @@ Caveats:
     cannot use class attribute in JSX, instead use className="" (unless you're using react V16+...)
     component files should be in CapitalCase (PascalCase?)
     component classes have a mandatory render method that returns jsx.
+

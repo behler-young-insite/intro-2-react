@@ -5,7 +5,7 @@ import Todos from './components/Todos'
 function App() {
   return (
     <div className="App">
-      <h1>Here's a list of things to do:</h1>
+      <h1>This list looks like a tire:</h1>
       <Todos/>
     </div>
   );
