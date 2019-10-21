@@ -1,18 +1,7 @@
 // import React, {Component} from 'react';
 import React from 'react';
-import styled from 'styled-components';
-const Checkbox = require('../../node_modules/@insitesoft/mobius/Checkbox').default;
-
-// this is a styled component:
-const ListItem = styled.h3`
-    text-align: center;
-    color: orange;
-    background-color: #383838;
-    width: 100%;
-    border-radius: 5px;
-    line-height: 2.5;
-    font-size: 1.5rem;
-`;
+import { TodoItem } from './TodoItem';
+// import PropTypes from 'prop-types'; // data validator class, note capitalization in implementation below class declaration
 
 class Todos extends React.Component {
     state = {
@@ -20,7 +9,7 @@ class Todos extends React.Component {
             {
                 id: 1,
                 title: 'item 1',
-                completed: true
+                completed: false
             },
             {
                 id: 2,
@@ -45,7 +34,7 @@ class Todos extends React.Component {
             {
                 id: 6,
                 title: 'item 6',
-                completed: true
+                completed: false
             },
             {
                 id: 7,
@@ -70,7 +59,7 @@ class Todos extends React.Component {
             {
                 id: 11,
                 title: 'item 11',
-                completed: true
+                completed: false
             },
             {
                 id: 12,
@@ -95,11 +84,43 @@ class Todos extends React.Component {
         ]
     }
 
+    markComplete = (id)=>{ // id passed from onchange method binding
+        console.log('Todos.js'); // this is called from TodoItem.js checkbox click onChange event
+        this.setState({todos: this.state.todos.map(todo => {
+            if (todo.id===id){
+                todo.completed= !todo.completed; // toggle switch
+            }
+            return todo;
+            })
+        })
+    }
+
+    deleteItem = (id)=>{
+        this.setState({todos: [...this.state.todos.filter(todo => todo.id!==id)]}) //... = spread operator (copies the array)
+    }
+
+    newTodo = (title)=>{
+        console.log(this.newTodo);
+        const newTodo = {
+            id : 16,
+            title: title,
+            completed: false
+        };
+        console.log(newTodo.title+" being added to list!");
+        this.setState({todos: [...this.state.todos, newTodo]});
+    }
+
     render() {
-        return this.state.todos.map((todo)=>
-            <ListItem> <Checkbox css="background-color: lime; border-radius: 5px;"/>  {todo.title} </ListItem>
-        )
+        return this.state.todos.map((todo)=> (
+            <TodoItem key={todo.id} todo={todo} markComplete={this.markComplete} deleteItem={this.deleteItem}/>
+        ))
     }
 }
+
+// PropTypes
+// Todos.propTypes = { // lowercase propTypes class property
+//     todos: PropTypes.array.isRequired // capital PropTypes imported Class
+// }
+// this is throwing an error because I stored state in Todos components, in the video, he had it in app.js, but I couldn't reconcile the older app.render() with reactDom.render
 
 export default Todos;

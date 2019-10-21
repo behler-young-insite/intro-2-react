@@ -32,8 +32,23 @@ Getting started: (https://github.com/facebook/create-react-app/blob/master/READM
     npm start (kicks off the dev server and previews in browser)
     get coding! - this gives a boilerplate
 
+Styling:
+    styled elements:
+        const customElement = styled.div`***{Custom Styling e.g. color: red,}***` 
+            // can add &'s to increase specificity (each & re-add the class) so, customElement = styled.div`&&&{color:red}` == .CustomElement-asdf123.CustomElement-asdf123.CustomElement-asdf123 {color: red}
+        <customElement css="inline stylings"/>
+            // Looks like my style object overwrites onload inline styles
+        <element style={styleObject} || style={{color: "red"}}? />
+            styleObject = {backgroundColor: 'yellow', color: 'blue', ...}
+
 Caveats:
     cannot use class attribute in JSX, instead use className="" (unless you're using react V16+...)
     component files should be in CapitalCase (PascalCase?)
     component classes have a mandatory render method that returns jsx.
-
+    make components quickly & easily w/ es7 react - 
+    should use arrow functions for component methods as they bind this automatically
+        someFunction(e){this is undefined} unless this.someFunction.bind(this)
+        alternatively:
+        someFunction = (e)=>{this is already the this of the event}
+    w/o redux or stateAPI, need to manually climb the dom tree - pass functions via component properties to reach the state you're affecting if it is a higher state, also need to pass any/all pertinent data up the tree
+   see destructureing example in todoitem.js render method 
