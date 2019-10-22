@@ -19,7 +19,8 @@
     "react-transition-group": "^4.3.0",
     "styled-components": "^4.4.0",
     "styled-components-modifiers": "^1.2.5",
-    "tiny-warning": "^1.0.3"
+    "tiny-warning": "^1.0.3",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",

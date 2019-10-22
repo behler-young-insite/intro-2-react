@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import uuid from 'uuid';
 const TextField = require('../../node_modules/@insitesoft/mobius/TextField').default;
+
 
 let containerStyles = {
     width: '50%',
@@ -21,24 +23,43 @@ let addButton = {
 }
 
 export class AddTodo extends Component {
-    state = {
-        title: ''
-    }
+    state = this.props.state;
 
-    onChange = (e)=>{
+    newTodo = {}
+    // n = 16;
+
+    onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    onSubmit = (e)=>{
+    onSubmit = (e) => {
         e.preventDefault();
-        console.log(this)
-        this.props.addTodo(this.state.title); // passess data up the tree to element in app.js
-        this.setState({ title: ''}); // resets text field to ''
+        // this.props.addTodo(this.state.title); // passess data up the tree to element in app.js
+        this.addTodo(this.state.title); // passess data up the tree to element in app.js
+        // this.setState({ title: '' }); // resets text field to ''
     }
 
-    addTodo = (e)=>{
-        console.log('addTodo.js');
-    }
+    addTodo = (title) => {
+        const newTodo = {
+            id: uuid.v4(),
+            title: title, // same as title,
+            completed: false
+        }
+        // let newState = {
+        //     ...this.state.todos, newTodo,
+        // }
+        this.setState({ todos: [...this.state.todos, newTodo] });
+
+        // this.parentState.setState(); // not a function
+        // this.props.state.setState();
+        // this.state.todos.unshift(newTodo);
+        // this.setState(newState);
+        console.log(this.state);
+        console.log(this.props.state);
+        // n++;
+        // return newTodo;
+        this.setState({title: ''})
+    };
 
     render() {
         return (

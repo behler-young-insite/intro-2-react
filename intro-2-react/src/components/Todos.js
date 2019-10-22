@@ -4,91 +4,92 @@ import { TodoItem } from './TodoItem';
 // import PropTypes from 'prop-types'; // data validator class, note capitalization in implementation below class declaration
 
 class Todos extends React.Component {
-    state = {
-        todos: [
-            {
-                id: 1,
-                title: 'item 1',
-                completed: false
-            },
-            {
-                id: 2,
-                title: 'item 2',
-                completed: false
-            },
-            {
-                id: 3,
-                title: 'item 3',
-                completed: false
-            },
-            {
-                id: 4,
-                title: 'item 4',
-                completed: false
-            },
-            {
-                id: 5,
-                title: 'item 5',
-                completed: false
-            },
-            {
-                id: 6,
-                title: 'item 6',
-                completed: false
-            },
-            {
-                id: 7,
-                title: 'item 7',
-                completed: false
-            },
-            {
-                id: 8,
-                title: 'item 8',
-                completed: false
-            },
-            {
-                id: 9,
-                title: 'item 9',
-                completed: false
-            },
-            {
-                id: 10,
-                title: 'item 10',
-                completed: false
-            },
-            {
-                id: 11,
-                title: 'item 11',
-                completed: false
-            },
-            {
-                id: 12,
-                title: 'item 12',
-                completed: false
-            },
-            {
-                id: 13,
-                title: 'item 13',
-                completed: false
-            },
-            {
-                id: 14,
-                title: 'item 14',
-                completed: false
-            },
-            {
-                id: 15,
-                title: 'item 15',
-                completed: false
-            }
-        ]
-    }
+    // state = {
+    //     todos: [
+    //         {
+    //             id: 1,
+    //             title: 'item 1',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 2,
+    //             title: 'item 2',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 3,
+    //             title: 'item 3',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 4,
+    //             title: 'item 4',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 5,
+    //             title: 'item 5',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 6,
+    //             title: 'item 6',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 7,
+    //             title: 'item 7',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 8,
+    //             title: 'item 8',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 9,
+    //             title: 'item 9',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 10,
+    //             title: 'item 10',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 11,
+    //             title: 'item 11',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 12,
+    //             title: 'item 12',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 13,
+    //             title: 'item 13',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 14,
+    //             title: 'item 14',
+    //             completed: false
+    //         },
+    //         {
+    //             id: 15,
+    //             title: 'item 15',
+    //             completed: false
+    //         }
+    //     ]
+    // }
+    state = this.props.state;
 
     markComplete = (id)=>{ // id passed from onchange method binding
         console.log('Todos.js'); // this is called from TodoItem.js checkbox click onChange event
         this.setState({todos: this.state.todos.map(todo => {
             if (todo.id===id){
-                todo.completed= !todo.completed; // toggle switch
+                todo.completed = !todo.completed; // toggle switch
             }
             return todo;
             })
