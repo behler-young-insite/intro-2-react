@@ -34,7 +34,7 @@ export class AddTodo extends Component {
 
     onSubmit = (e) => {
         e.preventDefault();
-        // this.props.addTodo(this.state.title); // passess data up the tree to element in app.js
+        // this.props.addTodo(this.state.title); // passess data up the tree to element in app.js // don't know how to work with functional App.js
         this.addTodo(this.state.title); // passess data up the tree to element in app.js
         // this.setState({ title: '' }); // resets text field to ''
     }

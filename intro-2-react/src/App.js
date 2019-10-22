@@ -6,7 +6,9 @@ import './App.css';
 import Todos from './components/Todos'
 import Header from './components/layout/header/Header.js';
 import AddTodo from './components/AddTodo.js';
+import About from './components/pages/about'
 import uuid from 'uuid';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 
 const AppBod = styled.div`
@@ -129,17 +131,24 @@ function App() {  // this is a functional component (why its different from Trav
 	}
 
 	return (
+		<Router>
 		<AppBod className="App">
 			<ThemeProvider theme={theme}>
-				<Header></Header>
-				{/* <AddTodo addTodo={addTodo()} state={state}></AddTodo> */}
-				<AddTodo state={state} />
+				<Route exact path="/" render={props =>(
+					<React.Fragment>
+					<Header></Header>
+					{/* <AddTodo addTodo={addTodo()} state={state}></AddTodo> */}
+					<AddTodo state={state} />
 
-				{/* <AddTodo></AddTodo> */}
+					{/* <AddTodo></AddTodo> */}
 				{/* <Todos state={state} newTodo={newTodo}/> */}
-				<Todos state={state} />
+					<Todos state={state} />
+					</React.Fragment>
+				)}/>	
+				<Route path="/About" component={About} />
 			</ThemeProvider>
 		</AppBod>
+		</Router>
 	);
 }
 

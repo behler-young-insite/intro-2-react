@@ -51,4 +51,7 @@ Caveats:
         alternatively:
         someFunction = (e)=>{this is already the this of the event}
     w/o redux or stateAPI, need to manually climb the dom tree - pass functions via component properties to reach the state you're affecting if it is a higher state, also need to pass any/all pertinent data up the tree
-   see destructureing example in todoitem.js render method 
+    see destructureing example in todoitem.js render method 
+    can use <React.Fragment><h1>Header</h1><p>sometext</p></React.Fragment> instead of an encapsulation element if you don't want all your components elements in a container
+    see routing on app.js - import BrowserRouter from react-router-dom (there may be a more modern way to do this?), access to BrowserRouter, Route, Link
+    
